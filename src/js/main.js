@@ -1,5 +1,5 @@
 // apiw.js
-import Weather_K from "./.env/weather.js";
+import Weather_K from "./env/weather.js";
 
 const lang = "en"; // Change language to English
 
