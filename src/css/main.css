@@ -1,0 +1,162 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/public/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.weather-container {
+    background: rgba(255, 255, 255, 0.315);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+#date {
+    margin-top: 10px;
+    font-size: 1.5em;
+    color: #0e0d0d;
+    font-weight: bold;
+}
+
+#clock {
+    margin-top: 0px;
+    font-size: 1.2em;
+    color: #446ef8;
+    font-weight: bold;
+}
+
+#weather {
+    margin-top: 20px;
+}
+
+#weather span {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #555;
+}
+
+.city {
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+.weather-description {
+    font-style: italic;
+}
+
+.temperature {
+    font-style: italic;
+    color: var(--temperature-color);
+}
+
+/* Quote styling */
+#quote {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(52, 70, 67, 0.199);
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: #4b4a4a;
+    text-align: center;
+}
+
+#quote span:first-child {
+    display: block;
+    font-style: italic;
+    margin-bottom: 5px;
+    color: #375241;
+}
+
+#quote span:last-child {
+    display: block;
+    font-weight: bold;
+    color: #47586b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .weather-container {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #date {
+        font-size: 1.2em;
+    }
+
+    #weather span {
+        font-size: 1.3em;
+    }
+
+    #quote {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .weather-container {
+        padding: 15px;
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    #date {
+        font-size: 1.1em;
+    }
+
+    #weather span {
+        font-size: 1.2em;
+    }
+
+    #quote {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-container {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    #date {
+        font-size: 1em;
+    }
+
+    #weather span {
+        font-size: 1em;
+    }
+
+    #quote {
+        font-size: 0.8em;
+    }
+}

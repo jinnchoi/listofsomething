@@ -1,0 +1,248 @@
+/* To-do list styles */
+#todo-form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#todo-form input,
+#todo-form button {
+    height: 50px; /* Ensure both input and button have same height */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+#todo-form input {
+    width: 100%;
+    text-align: center;
+    flex-grow: 1;
+}
+
+#todo-form button {
+    width: 100px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#todo-form button:hover {
+    background-color: #0056b3;
+}
+
+#todo-list {
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.507);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 45px; /* Match the height of the form input */
+    margin: 5px 0;
+    background: rgba(173, 222, 235, 0.26);
+    border-radius: 5px;
+    cursor: grab;
+}
+
+/* Add additional styles for touch and drag feedback */
+#todo-list li.dragging {
+    opacity: 0.7;
+    z-index: 1000;
+    position: relative;
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+#todo-list li.invisible {
+    display: none;
+}
+
+#todo-list li.completed-rect {
+    border: 2px dotted green;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+#todo-list li input[type="text"] {
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 90%; /* Match height */
+    margin: 0;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 10px 0;
+    text-align: center; /* Center align text */
+    color: navy; /* Set text color to navy blue */
+}
+
+#todo-list li input[type="text"]:focus {
+    outline: none;
+    width: 90%;
+    height: 50%; /* Match height */
+    background: rgba(184, 224, 211, 0.747);
+}
+
+#todo-list li input[type="text"].completed-text {
+    color: grey; /* Change text color to grey when completed */
+}
+
+.edit-btn,
+.save-btn,
+.complete-btn {
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    height: 30px; /* Align buttons vertically with input */
+}
+
+.edit-btn {
+    background: #f3c94cce;
+    color: white;
+}
+
+.save-btn {
+    background: #f83abf;
+    color: white;
+}
+
+.complete-btn {
+    background: #28a745;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #ffbf00;
+}
+
+.save-btn:hover {
+    background: #01532d;
+}
+
+.complete-btn:hover {
+    background: #218838;
+}
+
+.delete-btn {
+    background: url('/public/images/dele1.png') no-repeat center center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.delete-btn:hover {
+    filter: brightness(0.8);
+}
+
+/* Score styles */
+#score-container {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#score-label {
+    font-size: 1.2em;
+    color: #0e0d0d;
+    font-weight: bold;
+}
+
+#score {
+    font-size: 1.2em;
+    color: #0e0d0d;
+    font-weight: bold;
+}
+
+#reset-score-btn {
+    height: 18px;
+    background: #f03746ab;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 0 10px;
+    font-size: 0.7em;
+}
+
+#reset-score-btn:hover {
+    background: #c82333;
+}
+
+/* Responsive adjustments for to-do list and score */
+@media (max-width: 1024px) {
+    #todo-form input {
+        width: 70%;
+    }
+
+    #todo-form button {
+        width: 90px;
+    }
+
+    #score-container {
+        top: 10px;
+        right: 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    #todo-form input {
+        width: 75%;
+    }
+
+    #todo-form button {
+        width: 80px;
+    }
+
+    #score-container {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    #todo-form {
+        flex-direction: column;
+    }
+
+    #todo-form input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #todo-form button {
+        width: 100%;
+    }
+
+    #todo-list li {
+        font-size: 1.2em;
+    }
+
+    #score-container {
+        top: 10px;
+        right: 5px;
+        font-size: 0.7em;
+    }
+}

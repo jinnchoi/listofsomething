@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>List_of_Something</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/src/css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/src/css/sub.css">
+    <script type="module" defer src="/src/js/main.js"></script>
+    <script defer src="/src/js/quotes.js"></script>
+    <script defer src="/src/js/clock.js"></script>
+    <script defer src="/src/js/todo.js"></script>
+    <script defer src="/src/js/score.js"></script>
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Present</h1>
+        <div id="date"></div> <!-- Placeholder for the date -->
+        <div id="clock">00:00:00</div>
+        <div id="weather">
+            <span class="city"></span>
+            <span class="weather-description"></span>
+            <span class="temperature"></span>
+        </div>
+        <div id="quote">
+            <span></span><br>
+            <span></span>
+        </div>
+        <form id="todo-form">
+            <input type="text" placeholder="Today's to-do, 오늘 해야할 일을 적어보세요~!" required />
+            <button type="submit">Add</button>
+        </form>
+        <ul id="todo-list"></ul>
+        <div id="score-container">
+            <span id="score-label">Score:</span>
+            <span id="score">0</span>
+            <button id="reset-score-btn">Reset</button>
+        </div>
+    </div>
+</body>
+</html>
