@@ -1,7 +1,9 @@
 require('dotenv').config();
-const fetch = require('node-fetch');
 
 exports.handler = async function(event, context) {
+    // node-fetch 모듈을 동적으로 import
+    const fetch = (await import('node-fetch')).default;
+    
     const API_KEY = process.env.WEATHER_API_KEY;
     const { lat, lon, lang = 'en' } = event.queryStringParameters;
 
@@ -12,11 +14,17 @@ exports.handler = async function(event, context) {
     try {
         const response = await fetch(url);
 
-        // 응답 데이터를 텍스트로 읽어서 출력
+        // 응답 상태 코드 및 응답 텍스트 출력
         const responseText = await response.text();
+        console.log("Response status:", response.status);
         console.log("Response Text:", responseText);
 
-        // 텍스트를 JSON으로 파싱
+        // 상태 코드가 200이 아닌 경우 오류 처리
+        if (response.status !== 200) {
+            throw new Error(`Failed to fetch weather data: ${response.status}`);
+        }
+
+        // JSON으로 파싱하기 전에 응답이 JSON인지 확인
         const data = JSON.parse(responseText);
 
         return {
