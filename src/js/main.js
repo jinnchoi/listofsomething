@@ -1,5 +1,5 @@
-// apiw.js
-import Weather_K from "./env/weather.js";
+// 기존의 Weather_K import 제거
+// import Weather_K from "./env/weather.js";
 
 const lang = "en"; // Change language to English
 
@@ -22,7 +22,9 @@ function setTemperatureColor(temp) {
 function onGeoOK(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${Weather_K}&lang=${lang}&units=metric`;
+
+    // Netlify Functions을 사용하여 날씨 정보를 가져옵니다.
+    const url = `/.netlify/functions/getWeather?lat=${lat}&lon=${lon}&lang=${lang}`;
 
     fetch(url)
         .then((response) => response.json())
