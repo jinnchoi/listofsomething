@@ -1,0 +1,4 @@
+/*
+  Content-Security-Policy: script-src 'self' 'unsafe-eval';
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
